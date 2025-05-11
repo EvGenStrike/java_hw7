@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import ru.petryakov.NauJava.entity.User;
 import ru.petryakov.NauJava.service.UserService;
 
-@Controller
 public class AuthController {
 
     private final UserService userService;
@@ -21,7 +20,7 @@ public class AuthController {
 
     @GetMapping("/register")
     public String showRegistrationForm() {
-        return "register"; // Название страницы с формой регистрации
+        return "register";
     }
 
     @PostMapping("/register")
@@ -39,6 +38,6 @@ public class AuthController {
 
         userService.addUser(user);
 
-        return "redirect:/login";  // Перенаправление на страницу логина
+        return "redirect:/login";
     }
 }

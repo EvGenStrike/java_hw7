@@ -21,6 +21,11 @@ public class RegistrationController {
         return "register";
     }
 
+    @GetMapping("/login")
+    public String showLoginForm(Model model) {
+        return "login";
+    }
+
     @PostMapping("/register")
     public String registerUser(@ModelAttribute("user") User user) {
         user.setRole("USER");
